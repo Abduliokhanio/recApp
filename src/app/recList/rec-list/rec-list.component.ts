@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-rec-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rec-list.component.css']
 })
 export class RecListComponent implements OnInit {
+  text = ""
+  constructor(private data: DataService) { }
 
-  constructor() { }
+  recList = ['onion', 'banana', 'juice']
 
   ngOnInit(): void {
+    this.data.share.subscribe(x => this.recList.push(x))
   }
 
 }

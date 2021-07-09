@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-input-form',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-form.component.css']
 })
 export class InputFormComponent implements OnInit {
-
-  constructor() { }
+  txt = ''
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  updateText(txt: string){
+    this.data.updateData(txt)
   }
 
 }
