@@ -14,7 +14,10 @@ export class InputFormComponent implements OnInit {
   }
 
   updateText(txt: string){
-    this.data.updateData(txt)
+    this.data.updateData(txt);
+    
+    (<HTMLInputElement>document.getElementById("txt2")).value = "";
+    
   }
 
 }
