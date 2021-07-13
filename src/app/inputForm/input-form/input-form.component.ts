@@ -8,19 +8,21 @@ import { Recipe } from 'src/app/models/recipe.model';
   styleUrls: ['./input-form.component.css']
 })
 export class InputFormComponent implements OnInit {
-  txt = ''
+  rNametxt = ''
+  rNameDesc = ''
+  rNameImg = ''
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
   }
 
-  updateText(txt: string){
+  updateText(rName: string, rDesc: string, imgI: string){
 
-    let newRec = new Recipe(txt, "some new Des", "some new img")
+    let newRec = new Recipe(rName, rDesc, imgI)
 
     this.data.updateData(newRec);
     
-    (<HTMLInputElement>document.getElementById("txt2")).value = "";
+    (<HTMLInputElement>document.getElementById("rname")).value = "";
     
   }
 

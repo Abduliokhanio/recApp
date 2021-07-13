@@ -1,1 +1,9 @@
-<input type="text" [(ngModel)] = "txt" #txt2 id = "txt2"><Button (click)="updateText(txt2.value)">Submit</Button>
+
+<b>Name: </b>
+<input type="text" [(ngModel)] = "rNametxt" #rname id = "rname"/><br>
+<b>Desc: </b>
+<input type="text" [(ngModel)] = "rNameDesc" #rDesc id = "rDesc"/><br>
+<b>Img: </b>
+<input type="text" [(ngModel)] = "rNameImg" #rImg id = "rImg"/><br>
+
+<Button (click)="updateText(rname.value,rDesc.value, rImg.value)">Submit</Button>
